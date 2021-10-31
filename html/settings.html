@@ -1,0 +1,121 @@
+<style>
+.s1 {
+    position: relative; width: 90px;
+    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+}
+.s1-checkbox {
+    display: none;
+}
+.s1-label {
+    display: block; overflow: hidden; cursor: pointer;
+    border: 2px solid #999999; border-radius: 20px;
+}
+.s1-inner {
+    display: block; width: 200%; margin-left: -100%;
+    transition: margin 0.3s ease-in 0s;
+}
+.s1-inner:before, .s1-inner:after {
+    display: block; float: left; width: 50%; height: 30px; padding: 0; line-height: 30px;
+    font-size: 14px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+    box-sizing: border-box;
+}
+.s1-inner:before {
+    content: "Short";
+    padding-left: 10px;
+    background-color: #34A7C1; color: #FFFFFF;
+}
+.s1-inner:after {
+    content: "Long";
+    padding-right: 10px;
+    background-color: #EEEEEE; color: #999999;
+    text-align: right;
+}
+.s1-switch {
+    display: block; width: 18px; margin: 6px;
+    background: #FFFFFF;
+    position: absolute; top: 0; bottom: 0;
+    right: 56px;
+    border: 2px solid #999999; border-radius: 20px;
+    transition: all 0.3s ease-in 0s; 
+}
+.s1-checkbox:checked + .s1-label .s1-inner {
+    margin-left: 0;
+}
+.s1-checkbox:checked + .s1-label .s1-switch {
+    right: 0px; 
+}
+.s2 {
+    position: relative; width: 90px;
+    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+}
+.s2-checkbox {
+    display: none;
+}
+.s2-label {
+    display: block; overflow: hidden; cursor: pointer;
+    border: 2px solid #999999; border-radius: 20px;
+}
+.s2-inner {
+    display: block; width: 200%; margin-left: -100%;
+    transition: margin 0.3s ease-in 0s;
+}
+.s2-inner:before, .s2-inner:after {
+    display: block; float: left; width: 50%; height: 30px; padding: 0; line-height: 30px;
+    font-size: 14px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+    box-sizing: border-box;
+}
+.s2-inner:before {
+    content: "ON";
+    padding-left: 10px;
+    background-color: #34A7C1; color: #FFFFFF;
+}
+.s2-inner:after {
+    content: "OFF";
+    padding-right: 10px;
+    background-color: #EEEEEE; color: #999999;
+    text-align: right;
+}
+.s2-switch {
+    display: block; width: 18px; margin: 6px;
+    background: #FFFFFF;
+    position: absolute; top: 0; bottom: 0;
+    right: 56px;
+    border: 2px solid #999999; border-radius: 20px;
+    transition: all 0.3s ease-in 0s; 
+}
+.s2-checkbox:checked + .s2-label .s2-inner {
+    margin-left: 0;
+}
+.s2-checkbox:checked + .s2-label .s2-switch {
+    right: 0px; 
+}
+</style>
+
+<div>
+    <fieldset>
+        <legend>Display Format</legend>
+        <div class="s1">
+            <input type="checkbox" onclick="plugin.himehowareu.FToggleFormat()" name="s1" class="s1-checkbox" id="HimeFormat" checked>
+                <label class="s1-label" for="HimeFormat">
+                <span class="s1-inner"></span>
+                <span class="s1-switch"></span>
+            </label>
+        </div>
+    </fieldset>
+    <fieldset>
+        <legend>Logging</legend>
+        <div class="s2">
+            <input type="checkbox" onclick="plugin.himehowareu.FToggleLogging()" name="s2" class="s2-checkbox" id="HimeLogging" checked>
+                <label class="s2-label" for="HimeLogging">
+                <span class="s2-inner"></span>
+                <span class="s2-switch"></span>
+                </label>
+        </div>
+        <button id="HimeClearLog" onclick="plugin.himehowareu.FClearLog();">
+            Clear Logs
+        </button>
+    </fieldset>
+    <script type="text/javascript">
+        plugin.himehowareu.FShowSettings();
+    </script>
+</div>
