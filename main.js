@@ -2,7 +2,7 @@
 // @id             Bulkcodes
 // @name           IITC plugin: Bulk Codes
 // @category       Info
-// @version        1.0.4
+// @version        1.0.5
 // @namespace      https://github.com/jonatkins/ingress-intel-total-conversion
 // @description    [iitc-2020-05-04-021732] Allow users to enter multiple codes
 // @include        https://*.ingress.com/*

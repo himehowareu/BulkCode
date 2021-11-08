@@ -2,7 +2,7 @@
 // @id             Bulkcodes
 // @name           IITC plugin: Bulk Codes
 // @category       Info
-// @version        1.0.4
+// @version        1.0.5
 // @namespace      https://github.com/jonatkins/ingress-intel-total-conversion
 // @description    [iitc-2020-05-04-021732] Allow users to enter multiple codes
 // @include        https://*.ingress.com/*
@@ -48,7 +48,7 @@ function wrapper(plugin_info) {
     //main windows popup
     plugin.himehowareu.DClick = function (ev) {
         dialog({
-            html: '<div style="text-align: center" id="himeCodePopUp1" >Please enter your codes<br /><textarea id="himeCode" placeholder="Codes here.."></textarea><br /><div><button onclick="plugin.himehowareu.FCodes();">Enter</button></div></div style="text-align: center"><div style="text-align:left" id="himeCodePopUp2" hidden><div><a onclick="plugin.himehowareu.DHelp();">What do the colors mean?</a></div><fieldset id="himeRedeemed" ><legend>Redeemed</legend></fieldset><div>Total:<span id="himeTotal"></span></div><div style="text-align: center"><spam id="himeitems"></spam></div></div>',
+            html: '<div style="text-align: center" id="himeCodePopUp1" >Please enter your codes<br /><textarea id="himeCode" placeholder="Codes Here.."></textarea><br /><div><button onclick="plugin.himehowareu.FCodes();">Enter</button></div></div style="text-align: center"><div style="text-align:left" id="himeCodePopUp2" hidden><div><a onclick="plugin.himehowareu.DHelp();">What do the colors mean?</a></div><fieldset id="himeRedeemed" ><legend>Redeemed</legend></fieldset><div>Total:<span id="himeTotal"></span></div><div style="text-align: center"><spam id="himeitems"></spam></div></div>',
             title: 'Bulk Codes',
             buttons: {
                 'Settings': plugin.himehowareu.DSettings,
