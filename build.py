@@ -12,6 +12,15 @@ output = "bulkCodes.user.js"
 lint = False
 upload = False
 
+def run(command):
+    out = 0
+    if os.name == 'nt':
+        out = os.system(command + ' 2> nul' )
+    else:
+        out = os.system(command + ' >/dev/nul')
+    return out
+
+
 def inject(target,token):
     pattern = re.compile(r'\s{2,}|</*himehowareu>')
     filename = re.sub(pattern,"",token)
@@ -23,7 +32,7 @@ def inject(target,token):
         return target
 
 if len(sys.argv) >=2:
-    jshint = os.system('jshint -v 2> nul' if os.name == 'nt' else 'jshint -v > /dev/nul')
+    jshint = run("jshint -v")
 
     if "lint" in sys.argv:
         if jshint == 1:
@@ -69,10 +78,12 @@ if lint:
             print("Plugin compiled without error")
 
 if upload:
-    git = os.system('git --version 2> nul' if os.name == 'nt' else 'git --version >/dev/nul')
+    git = run("git --version")
     if not git:
-        os.system("git add -A")
-        os.system("git commit -am \""+input("commit message: ")+"\"")
-        os.system("git push")
+        a = run("git add -A")
+        a+= run("git commit -am \""+input("commit message: ")+"\"")
+        a+= run("git push 2")
+        if a:
+            print("error while pushing to git")
     else:
         print("git is not found , can not upload plugin")
