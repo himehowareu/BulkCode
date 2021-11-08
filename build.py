@@ -72,7 +72,7 @@ if upload:
     git = os.system('git --version 2> nul' if os.name == 'nt' else 'git --version >/dev/nul')
     if not git:
         os.system("git add -A")
-        os.system("git commit -am '"+input("commit message: ")+"'")
+        os.system("git commit -am \""+input("commit message: ")+"\"")
         os.system("git push")
     else:
         print("git is not found , can not upload plugin")
