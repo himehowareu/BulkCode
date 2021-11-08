@@ -25,12 +25,12 @@ with open(output,"w") as outF:
             temp = inject(temp,file)
         outF.write(temp)
 
-os.system('cls' if os.name == 'nt' else 'clear')
+# os.system('cls' if os.name == 'nt' else 'clear')
 
-b=os.system('cls' if os.name == 'nt' else 'clear')
-out = os.system("jshint javascript")
-out += os.system("jshint "+output)
-if out == 0:
-    print("compiled plugin")
-else:
-    print("error")
+# b=os.system('cls' if os.name == 'nt' else 'clear')
+# out = os.system("jshint javascript")
+# out += os.system("jshint "+output)
+# if out == 0:
+#     print("compiled plugin")
+# else:
+#     print("error")
