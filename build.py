@@ -82,7 +82,7 @@ if upload:
     if not git:
         a = run("git add -A")
         a+= run("git commit -am \""+input("commit message: ")+"\"")
-        a+= run("git push 2")
+        a+= run("git push")
         if a:
             print("error while pushing to git")
     else:
