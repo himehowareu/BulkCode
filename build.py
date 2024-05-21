@@ -22,11 +22,11 @@ def run(command):
 
 
 def inject(target,token):
-    pattern = re.compile(r'\s{2,}|</*himehowareu>')
+    pattern = re.compile(r'\s{2,}|</*import>')
     filename = re.sub(pattern,"",token)
     with open(filename,"r") as fileh:
         thing = fileh.read()
-        thing = thing.replace("\n","").replace("\'","\"")
+        thing = thing.replace("\n","").replace("\'","\"").replace("\t","").replace("  ","")
         thing = re.sub(pattern, '', thing)
         target = target.replace(token,thing)
         return target
@@ -63,7 +63,7 @@ with open(output,"w") as outF:
     with open(base,"r") as baseF:
         out = baseF.read()
         temp = out
-        pat = re.compile(r'<himehowareu>.*<\/himehowareu>')
+        pat = re.compile(r'<import>.*<\/import>')
         for file in re.findall(pat,out):
             temp = inject(temp,file)
         outF.write(temp)

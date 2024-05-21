@@ -2,7 +2,7 @@
 // @id             Bulkcodes
 // @name           IITC plugin: Bulk Codes
 // @category       Info
-// @version        <himehowareu>version.txt</himehowareu>
+// @version        <import>version.txt</import>
 // @namespace      https://github.com/jonatkins/ingress-intel-total-conversion
 // @description    [iitc-2020-05-04-021732] Allow users to enter multiple codes
 // @include        https://*.ingress.com/*
@@ -31,16 +31,16 @@ function wrapper(plugin_info) {
     plugin.himehowareu.enterKey = { type: "keypress", keyCode: 13, which: 13, charCode: 13 };
 
     plugin.himehowareu.FUpdateSetting = function (setting, value) {
-        <himehowareu>javascript/UpdateSetting.js</himehowareu>
+        <import>javascript/UpdateSetting.js</import>
     };
 
     //setting up the needed storge for settings 
-    <himehowareu>javascript/setup.js</himehowareu>
+    <import>javascript/setup.js</import>
 
     //help msg for the color codes
     plugin.himehowareu.DHelp = function () {
         dialog({
-            html: '<himehowareu>html/info.html</himehowareu>',
+            html: '<import>html/info.html</import>',
             title: 'Color Codes',
         });
     };
@@ -48,7 +48,7 @@ function wrapper(plugin_info) {
     //main windows popup
     plugin.himehowareu.DClick = function (ev) {
         dialog({
-            html: '<himehowareu>html/popup.html</himehowareu>',
+            html: '<import>html/popup.html</import>',
             title: 'Bulk Codes',
             buttons: {
                 'Settings': plugin.himehowareu.DSettings,
@@ -60,7 +60,7 @@ function wrapper(plugin_info) {
     // settings popup
     plugin.himehowareu.DSettings = function () {
         dialog({
-            html: '<himehowareu>html/settings.html</himehowareu>',
+            html: '<import>html/settings.html</import>',
             title: 'Settings',
         });
     };
@@ -68,55 +68,55 @@ function wrapper(plugin_info) {
     //log popup
     plugin.himehowareu.DLog = function () {
         dialog({
-            html: '<himehowareu>html/Log.html</himehowareu>',
+            html: '<import>html/Log.html</import>',
             title: 'Settings',
         });
     };
 
     // function for parsing the codes 
     plugin.himehowareu.FCodes = function () {
-        <himehowareu>javascript/codes.js</himehowareu>
+        <import>javascript/codes.js</import>
     };
 
     //function to update the redeem funciton built into IITC
     plugin.himehowareu.FRedeem = function (data, textStatus, jqXHR) {
-        <himehowareu>javascript/redeem.js</himehowareu>
+        <import>javascript/redeem.js</import>
     };
 
     plugin.himehowareu.SendRedeem = function (passcode) {
-        <himehowareu>javascript/sendRedeem.js</himehowareu>
+        <import>javascript/sendRedeem.js</import>
     };
 
     plugin.himehowareu.FShowSettings = function () {
-        <himehowareu>javascript/showSettings.js</himehowareu>
+        <import>javascript/showSettings.js</import>
     };
 
     plugin.himehowareu.FToggleFormat = function () {
-        <himehowareu>javascript/ToggleFormat.js</himehowareu>
+        <import>javascript/ToggleFormat.js</import>
     };
 
     plugin.himehowareu.FToggleLogging = function () {
-        <himehowareu>javascript/ToggleLogging.js</himehowareu>
+        <import>javascript/ToggleLogging.js</import>
     };
 
     plugin.himehowareu.FClearLog = function () {
-        <himehowareu>javascript/clearLog.js</himehowareu>
+        <import>javascript/clearLog.js</import>
     };
 
     plugin.himehowareu.FLog = function (text) {
-        <himehowareu>javascript/log.js</himehowareu>
+        <import>javascript/log.js</import>
     };
 
     plugin.himehowareu.FShowLog = function () {
-        <himehowareu>javascript/showLog.js</himehowareu>
+        <import>javascript/showLog.js</import>
     };
 
     plugin.himehowareu.FCount = function (data) {
-        <himehowareu>javascript/countItems.js</himehowareu>
+        <import>javascript/countItems.js</import>
     };
 
     plugin.himehowareu.FCopyLog = function () {
-        <himehowareu>javascript/copylog.js</himehowareu>
+        <import>javascript/copylog.js</import>
     };
 
 
